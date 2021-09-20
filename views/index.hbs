@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>ToDo App</title>
+</head>
+<body>
+    <h3 id="h3" class="h">ToDo List From template Engine</h3>
+    <form action="/add" method="POST">
+        <input type="text" placeholder="Enter Task" name="taskname">
+        <input type="text" placeholder="Type" name="tasktype">
+        <button type="submit">Add Task</button>    
+    </form>
+
+    <h3 id="table-heading">Your ToDo List</h3>
+    <ul>
+        {{#each str1}}
+            <li>{{this.todoname}} : {{this.todotype}}</li> 
+            <a href="/delete/{{this._id}}">Delete</a>
+        {{/each}} 
+      <!--   <h3>{{str1}}</h3> -->
+    </ul>
+</body>
+</html>
